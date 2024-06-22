@@ -12,3 +12,6 @@ jobs:
 
     - name: Check Current Directory
       run: pwd
+
+    - name: checkout running docker services
+      run: docker ps
