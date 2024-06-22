@@ -1,0 +1,14 @@
+name: test-runner
+
+on: [push]
+
+jobs:
+  setup:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Check Current Directory
+      run: pwd
