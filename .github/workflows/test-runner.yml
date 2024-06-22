@@ -14,4 +14,4 @@ jobs:
       run: pwd
 
     - name: checkout running docker services
-      run: docker ps
+      run: sudo docker ps
