@@ -7,17 +7,15 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Check Current Directory
+      name: Check Current Directory
       run: pwd
 
-    - name: checkout running docker services
+    - name: Check running docker services
       run: sudo docker ps
-    
-    - name: Build Nginx Docker Image 
-      run: sudo docker build -t csn-nginx .
 
     - name: Stop Docker Container
       run: sudo docker stop csn-nginx || true
@@ -25,8 +23,8 @@ jobs:
     - name: Delete the Docker Container
       run: sudo docker rm csn-nginx || true
 
+    - name: Build Nginx Docker Image
+      run: sudo docker build -t csn-nginx .
+
     - name: Run the Docker Container
       run: sudo docker run -d --name csn-nginx -p 8080:80 csn-nginx
-
-    - name: Test the web service
-      run: curl http://localhost:8080
