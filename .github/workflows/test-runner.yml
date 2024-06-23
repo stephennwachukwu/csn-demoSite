@@ -11,7 +11,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-      name: Check Current Directory
+    - name: Check Current Directory
       run: pwd
 
     - name: Check running docker services
