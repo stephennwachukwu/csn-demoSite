@@ -4,12 +4,11 @@ on: [push]
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: self-hosted #ubuntu-latest
 
     steps:
-
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
 
     - name: Check Current Directory
       run: pwd
@@ -28,3 +27,6 @@ jobs:
 
     - name: Run the Docker Container
       run: sudo docker run -d --name csn-nginx -p 8080:80 csn-nginx
+    
+    - name: Test the web service
+      run: curl http://localhost:8080
