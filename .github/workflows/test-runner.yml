@@ -26,10 +26,10 @@ jobs:
       run: sudo docker rm csn-nginx || true
 
     - name: Build Nginx Docker Image
-      run: sudo docker build -t csn-nginx .
+      run: sudo docker build -t csn-nginx-build .
 
     - name: Run the Docker Container
-        run: sudo docker run -it --rm -d -p 80:80 --name csn-nginx csn-nginx
+      run: sudo docker run -it --rm -d -p 80:80 --name csn-nginx csn-nginx-build
     
     - name: Test the web service
       run: curl http://localhost:80
