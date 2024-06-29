@@ -17,7 +17,7 @@ jobs:
       run: sudo docker ps
 
     - name: Deleting unused or dangling images #added new line here
-      run: sudo docker rmi $(docker images -f dangling=true -q)
+      run: sudo docker rmi csn-nginx || true
 
     - name: Stop Docker Container
       run: sudo docker stop csn-nginx || true
