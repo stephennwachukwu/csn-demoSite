@@ -16,6 +16,9 @@ jobs:
     - name: Check running docker services
       run: sudo docker ps
 
+    - name: Deleting unused or dangling images #added new line here
+      run: sudo docker rmi $(docker images -f dangling=true -q)
+
     - name: Stop Docker Container
       run: sudo docker stop csn-nginx || true
 
@@ -29,4 +32,4 @@ jobs:
         run: sudo docker run -it --rm -d -p 80:80 --name csn-nginx csn-nginx
     
     - name: Test the web service
-      run: curl http://localhost:8080
+      run: curl http://localhost:80
