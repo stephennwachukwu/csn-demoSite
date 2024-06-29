@@ -1,45 +1,63 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: #f0f0f0;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 2em;
-}
-
-h2 {
-  margin: 0.5em 0;
-}
-
-section {
-    margin-bottom: 1.5em;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
 main {
-    display: flex;
-    padding: 1em;
-    flex-direction: column;
-    align-items: center;
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+h2 {
+    color: #4CAF50;
+    margin-bottom: 0.5em;
 }
 
-button:hover {
-    background-color: #eee;
+section {
+    margin-bottom: 2em;
+}
+
+section.intro p {
+    font-size: 1.2em;
+}
+
+section.contact p,
+section.hng p,
+section.interests ul {
+    font-size: 1em;
+}
+
+section.contact p strong,
+section.hng a {
+    color: #333;
+}
+
+section.interests ul {
+    list-style-type: square;
+    padding-left: 1.5em;
+}
+
+section.interests li {
+    margin-bottom: 0.5em;
 }
 
 footer {
@@ -51,3 +69,13 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
